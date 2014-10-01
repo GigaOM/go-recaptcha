@@ -1,6 +1,6 @@
 <?php
-//Note: this class name capitalization ( reCAPTCHA ) is against our standards, but it's a brand name.
-class GO_reCAPTCHA
+
+class GO_reCaptcha
 {
 	public $slug          = 'go-recaptcha';
 	public $api_create    = 'https://www.google.com/recaptcha/admin/create';
@@ -22,7 +22,7 @@ class GO_reCAPTCHA
 		'invalid-request-cookie'   => 'The challenge parameter did not validate.',
 		'incorrect-captcha-sol'    => 'The CAPTCHA solution was incorrect.',
 		'captcha-timeout'          => 'You waited too long please try answering the CAPTCHA again.',
-		'recaptcha-not-reachable'  => 'The connection to the reCAPTCHA service failed.',
+		'recaptcha-not-reachable'  => 'The connection to the reCaptcha service failed.',
 	);
 	public $script_added = FALSE;
 
@@ -39,7 +39,7 @@ class GO_reCAPTCHA
 			FALSE,
 			TRUE
 		);
-	}//end __construct
+	}//end contruct
 
 	/**
 	 *	Singleton for config data
@@ -85,7 +85,7 @@ class GO_reCAPTCHA
 
 		if ( 1 < $this->instance || ! wp_script_is( $this->slug . '-js', 'enqueued' ) )
 		{
-			// There's more than one instance of reCAPTCHA on the page so we need to get fancy
+			// There's more than one instance of reCaptcha on the page so we need to get fancy
 			wp_enqueue_script( $this->slug . '-js' );
 
 			wp_localize_script(
@@ -112,12 +112,12 @@ class GO_reCAPTCHA
 		<?php
 		$this->instance++;
 		//removes whitespace and line endings & etc from between tags to ensure the 'empty' div is.
-		$str = preg_replace( '/(?<=^|>)[^\w]+?(?=<|$)/', '', ob_get_clean() );
+		$str = preg_replace('/(?<=^|>)[^\w]+?(?=<|$)/', '', ob_get_clean());
 		return $str;
 	} // END get_inputs
 
 	/**
-	 *	Check the request for reCAPTCHA challenge field data
+	 *	Check the request for reCaptcha challenge field data
 	 */
 	public function check_request()
 	{
@@ -171,4 +171,4 @@ class GO_reCAPTCHA
 
 		return $this->is_valid;
 	} // END check_answer
-} // END GO_reCAPTCHA
+} // END GO_reCaptcha
