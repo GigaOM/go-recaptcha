@@ -5,7 +5,7 @@
 	</div>
 	<div class='recap-fields'>
 		<div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>
-		
+
 		<ul class="button-group radius even-3">
 			<li class="recaptcha_reload"><a class='button' title="Get another CAPTCHA"></a></li>
 			<li class="recaptcha_only_if_image"><a class='button' title="Get an audio CAPTCHA"></a></li>
@@ -27,10 +27,8 @@ $recaptcha_url = esc_url( $this->api_server . '/challenge?k=' . $this->config()-
 		src="<?php echo $recaptcha_url; // escaped above ?>">
 </script>
 <noscript>
-	<iframe src="<?php echo $recaptcha_url; // escaped above ?>"
-				height="300" width="500" frameborder="0"></iframe><br>
+	<iframe src="<?php echo $recaptcha_url; // escaped above ?>" height="300" width="500" frameborder="0"></iframe><br>
 	<textarea name="recaptcha_challenge_field" rows="3" cols="40">
 	</textarea>
-	<input type="hidden" name="recaptcha_response_field"
-				value="manual_challenge">
+	<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
 </noscript>
