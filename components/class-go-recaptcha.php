@@ -39,7 +39,7 @@ class GO_reCaptcha
 			FALSE,
 			TRUE
 		);
-	}//end contruct
+	}//end __construct
 
 	/**
 	 *	Singleton for config data
@@ -112,7 +112,7 @@ class GO_reCaptcha
 		<?php
 		$this->instance++;
 		//removes whitespace and line endings & etc from between tags to ensure the 'empty' div is.
-		$str = preg_replace('/(?<=^|>)[^\w]+?(?=<|$)/', '', ob_get_clean());
+		$str = preg_replace( '/(?<=^|>)[^\w]+?(?=<|$)/', '', ob_get_clean() );
 		return $str;
 	} // END get_inputs
 
@@ -171,4 +171,4 @@ class GO_reCaptcha
 
 		return $this->is_valid;
 	} // END check_answer
-} // END GO_reCaptcha
+}// END GO_reCaptcha
