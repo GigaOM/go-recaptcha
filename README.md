@@ -18,7 +18,7 @@ Usage
 You have to set the recaptcha private and public keys for this to work. If you are using [go-config](https://github.com/GigaOM/go-config) that's the best way to go. If not you will have to edit the `class-go-recaptcha.php` file to insert your keys.
 
 Once that is set up, you call a reCAPTCHA form using something along the lines of:
-```
+```html
 <fieldset class="recaptcha">
 	<?php
 		if ( function_exists( 'go_recaptcha' ) )
