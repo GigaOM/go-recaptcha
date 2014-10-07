@@ -30,7 +30,7 @@ Once that is set up, you call a reCAPTCHA form using something along the lines o
 ```
 
 and validate the recaptcha using something like:
-```
+```php
 if ( function_exists( 'go_recaptcha' ) && ! go_recaptcha()->check_request() )
 {
 	$return['error'] = go_recaptcha()->get_message_text();
